@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clipboard Redirect</title>
+    <script>
+        function copyToClipboardAndRedirect() {
+            const textToCopy = "Your text here"; // Change this to the text you want to copy
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                alert('Text copied to clipboard');
+                window.location.href = "https://www.example.com"; // Change this to your target URL
+            }).catch(err => {
+                console.error('Could not copy text: ', err);
+            });
+        }
+    </script>
+</head>
+<body onload="copyToClipboardAndRedirect()">
+    <h1>Clipboard Redirect</h1>
+    <p>If you see this message, the text should have been copied to your clipboard and you will be redirected shortly.</p>
+</body>
+</html>
+
+
